@@ -1,0 +1,30 @@
+@mixin flex($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin font($fontname) {
+    @if ($fontname == 'J') {
+        font-family: 'Josefin Sans', sans-serif;
+    } @else if ($fontname == 'R'){
+        font-family: 'Raleway', sans-serif;
+    } @else if ($fontname == 'Q'){
+        font-family: 'Quicksand', sans-serif;
+    }
+}
+
+@mixin fsize($size) {
+    font-size: $size+rem;
+}
+
+@mixin mar($top:0,$left:0,$bottom:0, $right:0) {
+    margin: $top $left $bottom $right;
+}
+
+@mixin card() {
+    box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px 1px rgba(0,0,0,.07);
+    transition: all 0.3s;
+    background: #fff;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px 1px rgba(0,0,0,.07);
+}

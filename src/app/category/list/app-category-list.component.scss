@@ -1,0 +1,44 @@
+.category {
+    max-width: 1500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;        
+    margin: 0 10px;
+    margin-bottom: 20px;
+    &__item {
+        flex: 0 1 calc(100% - 10px);
+        min-height: 300px;
+        margin-top: 20px;
+        transition: 0.3s;
+        img {
+            width: 100%;
+        }
+        cursor: pointer;
+        :hover {
+            transform: scale(1.01);
+            transition: 0.5s;
+        }
+    }
+    .mat-card {
+        padding: 0px;
+    }
+}
+
+
+@media only screen and (min-width: 500px)  {
+    .category {
+        &__item {
+            flex: 0 1 calc(50% - 30px);
+        }
+    }    
+}
+
+
+@media only screen and (min-width: 980px)  {
+    .category {
+        &__item {
+            flex: 0 1 calc(33.33% - 25px);
+        }
+    }    
+}

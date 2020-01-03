@@ -1,0 +1,21 @@
+<div class="category">
+    <mat-tab-group>
+        <mat-tab [label]="category.name" *ngFor="let category of allCategories">  
+            <div class="category-detail">
+                <div class="category-detail__title">
+                    {{category?.name}}
+                </div>
+                <div class="category-detail__divider"></div>
+                <div class="category-detail__wrapper">
+                    <div class="category-detail__block" *ngFor="let data of category.details">
+                        <mat-card class="category-detail__item" data-aos="zoom-in-up" data-aos-duration="1000" matRipple [matRippleCentered]="rippleConfig.centered" [matRippleDisabled]="rippleConfig.disabled" [matRippleUnbounded]="rippleConfig.unbounded">
+                            <img [src]="data"/>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>        
+        </mat-tab>
+    </mat-tab-group>
+</div>
+
+<!--@items-->

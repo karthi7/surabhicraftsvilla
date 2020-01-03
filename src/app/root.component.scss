@@ -1,0 +1,386 @@
+@import './scss/variables.scss';
+@import './scss/animation.scss';
+header {
+    width: 100%;
+    height: $header-height-mobile;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background: $white;
+    box-shadow: 0px 0px 3px $lightdark;
+    padding: 5px 20px;
+    z-index: 10;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+.welcome {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../assets/images/wallpaper10.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    opacity: 0.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    &__message {
+        margin: 10px;
+       
+        >div {
+            background: #00bcd426;
+            padding: 15px;
+            box-shadow: 0px 0px 3px #323232;
+        }
+        >div.offer {
+            margin-top: 10px;
+            background: #ffeb3b26;
+            box-shadow: 0px 0px 3px #444444;
+            label {
+                font-family: "Josefin Sans", sans-serif;
+                font-size: 1.35rem;
+                color: yellow;
+                font-weight: 500;
+                margin-bottom: 5px;
+                text-transform: uppercase;
+            }
+            p{padding-top: 10px;}
+        }
+        p{
+            width: 100%;
+            margin: auto;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 1.5rem;
+            color: $white;
+            font-weight: 500;
+        }
+    }
+    &__enquiry-wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 300px;
+        margin:15px  10px 10px;
+        margin-top: 0px;
+        background: $white;
+        padding: 0px 0px 20px 0px;
+        box-shadow: 0px 0px 3px $lightdark;
+        >button {
+            width: 30%;
+            margin: 0 auto;
+        }
+    }
+
+    &__enquiry-title { 
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1.25rem;
+        text-transform: capitalize;
+        padding-bottom: 5px;
+        border-bottom: 1px solid $grey;
+        padding-top: 15px;
+        padding-left: 15px;
+        background: $palewhite;
+        color: $teal;
+    }
+    
+    &__enquiry-body { 
+        padding: 25px;
+        > mat-form-field {
+            width: 97.5%;
+        }
+        > .multi-block  {
+            width: 100%;
+            mat-form-field {
+                width: 95%;
+            }
+        }
+    }
+}
+
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .videoOverlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background: #3989a014;
+    }
+    
+    &__one {
+        display: flex;
+        height: 100%;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .message {
+            font-family: "Josefin Sans", sans-serif;
+            color: black;
+            font-size: 5rem;
+            width: 100%;
+            text-align: center;
+        }
+        .images {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        img {
+            width: 25%;
+        }
+        .image_one{
+            width: 25%;
+        }
+        .image_two {
+            width: 30%;
+        }
+        .image_three {
+            width: 22%;
+        }
+        .bgVideo {
+            height: 275px;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%; 
+            object-fit: cover;            
+        }
+        .bgImage {
+            width: 100%;
+            min-height: 275px;
+            background-image: url('../assets/images/wallpaper4.jpg');
+            background-size: cover;
+            position: absolute;
+            z-index: -3;
+            top: 0;
+            background-position: center;
+            .overlay {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #2196f31a;
+            }
+        }       
+        .bgCard {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            .title {
+                font-family: "Josefin Sans", sans-serif;
+                color: white;
+                font-size: 1.75rem;
+                width: 100%;
+                text-align: center;
+                min-height: 225px;
+                z-index: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                p{
+                    margin: 0px;
+                    padding-left: 50px;
+                    padding-right: 50px;
+                    line-height: 35px;
+                    padding-top: 70px;
+                }
+            }
+            .banners {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+                max-width: 100%;
+                margin: 0 10px;
+                max-width: 1500px;
+                background: transparent;
+                opacity: 0.90;
+                >div {
+                    flex: 0 1 calc(100% - 10px);
+                    margin-bottom: 10px;
+                }
+                img {
+                    width: 100%;
+                    box-shadow: 0px 0px 4px #222233;
+                }
+            }
+        } 
+        .nav {
+            margin-top: 10px;
+            .custom-icon {
+                transform: rotate(45deg);
+                animation: animate 2s infinite;
+            }
+        }        
+    }
+    .category_header {
+        display: flex;
+        max-width: 1460px;
+        width:100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .category_title {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1.75rem;
+        padding-left: 20px;
+        width: 100%;   
+    }
+    .category {
+        max-width: 1500px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;        
+        margin: 0 10px;
+        margin-bottom: 20px;
+        &__item {
+            flex: 0 1 calc(100% - 10px);
+            min-height: 300px;
+            margin-top: 20px;
+            box-shadow: 0px 0px 4px #333622;
+            img {
+                width: 100%;
+            }
+            cursor: pointer;
+            :hover {
+                transform: scale(1.01);
+                transition: 0.5s;
+            }
+        }
+    }
+}
+
+/*Normal*/
+.fp-section {
+    background-size: cover !important;
+    opacity: 0.90;
+}
+
+.custom-icon {
+    color: #00bcd4;
+    font-size: 2.5rem;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.marHeaderGap {
+    margin-top: $header-height-mobile +10px;
+}
+
+.hyperlink {
+    margin-top: 5px;
+    visibility: hidden;
+    padding-top: 60px;
+}
+
+/*Normal*/
+
+@media only screen and (min-width: 500px)  {
+    header {
+        height: $header-height-web;
+    }
+    .welcome {
+        height: auto;
+        padding-top: $header-height-web;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        &__message {
+            width: 90%;
+            min-height: 250px;
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            p {
+                width: 100%;
+                font-size: 35px;
+                text-align: center;
+            }
+        }
+        &__enquiry-wrapper {
+            margin: 25px;
+        }       
+    }
+
+    .section {
+        &__one {
+            .message {
+                font-size: 3rem;
+                width: 30%;
+            }
+            .bgImage {
+                min-height: 500px;
+            }
+            .bgVideo {
+                height: 100vh;
+            }
+            .bgCard {
+                .title {
+                    font-size: 3.25rem;
+                    min-height: 450px;
+                    p{
+                        line-height: 60px;
+                        width: 65%;
+                        padding-top: 75px;
+                    }
+                }
+                .banners {
+                    flex-direction: row;
+                    >div{
+                        flex: 0 1 calc(50% - 20px);
+                    }
+                }
+            }
+        }    
+        .category {
+            &__item {
+                flex: 0 1 calc(50% - 20px);
+            }
+        }
+        .category_title {
+            font-size: 2rem;
+            padding-left: 0px;
+        }
+    }
+    .marHeaderGap {
+        margin-top: $header-height-web + 10px;
+    }
+
+}
+
+@media only screen and (min-width: 980px)  {
+    .welcome {
+        flex-direction: row;
+            &__message {
+                width:65%;
+            }
+    }
+    .section {
+        &__one {
+            .bgCard {
+                .banners {
+                    >div{
+                        flex: 0 1 calc(33.33% - 20px);
+                    }
+                }
+            }
+        }
+        .category {
+            &__item {
+                flex: 0 1 calc(33.33% - 25px);
+            }
+        }
+    }
+}

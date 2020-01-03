@@ -1,0 +1,11 @@
+<mat-form-field>
+    <mat-select placeholder="Filter" [formControl]="filterOpt" multiple (selectionChange)="onSelectionChange($event)">
+      <mat-select-trigger>
+        {{filterOpt.value ? filterOpt.value[0] : ''}}
+        <span *ngIf="filterOpt.value?.length > 1" class="example-additional-selection">
+          (+{{filterOpt.value.length - 1}} {{filterOpt.value?.length === 2 ? 'other' : 'others'}})
+        </span>
+      </mat-select-trigger>
+      <mat-option *ngFor="let option of filterData.original" [value]="option.id">{{option.name}}</mat-option>
+    </mat-select>
+</mat-form-field>

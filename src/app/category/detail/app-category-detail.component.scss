@@ -1,0 +1,103 @@
+@import '../../scss/variables.scss';
+
+.category {
+    padding-top: 60px;
+}
+
+ mat-tab-header {
+    // position: fixed;
+    // z-index: 10;
+    // background: linear-gradient(to right, #9a9a9a3d 0%, #455d4657 75%, #44444436 100%);    
+}
+
+.category-detail {
+    max-width: 1500px;
+    margin: auto;
+    //margin-top: $header-height-mobile;
+    &__title {
+        font-size: 1.75rem;
+        font-family: 'Josefin Sans', sans-serif;
+        padding-top: 20px;
+        text-align: center;
+    }
+    &__divider {
+        width: 200px;
+        height: 2px;
+        margin: auto;
+        margin-top: 5px;
+        background: linear-gradient(to right, #03A9F4 0%, #4CAF50 75%, #fe754d 100%);
+    }
+    &__wrapper {
+        max-width: 1500px;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;        
+        margin: 0 15px;
+        margin-bottom: 20px;        
+        .mat-card {
+            padding: 0px;
+        }
+    }
+    &__block {
+        flex: 0 1 calc(100%);
+    }
+    &__item{
+        margin-top: 15px;
+        transition: 0.4s;
+        img {
+            width: 100%;
+        }
+        cursor: pointer;
+        :hover {
+            // transform: scale(1.01);
+            transition: 0.4s;
+        }
+    }
+}
+
+.show-case {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    min-height: 100vh;
+    background: silver;
+    opacity: 0.4;
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img  {
+            padding: 0;
+            display: block;
+            margin: 0 auto;
+            max-height: 100%;
+        }
+    }
+}
+
+@media only screen and (min-width: 500px)  {
+    .category {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .category-detail {
+        // margin-top: $header-height-web;
+        &__block {
+            flex: 0 1 calc(50% - 30px);
+        }
+        &__item{
+            margin-top: 20px;
+        }
+    }    
+}
+
+
+@media only screen and (min-width: 980px)  {
+    .category-detail {
+        &__block {
+            flex: 0 1 calc(33.33% - 30px);
+        }
+    }    
+}

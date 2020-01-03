@@ -1,0 +1,157 @@
+
+<div class="container" [attr.mnFullpage]="canAddFullPageScroll ? '' : null" [attr.mnFullpageLicenseKey]="canAddFullPageScroll?scrollConfig.licenseKey:''" [attr.mnFullpageNavigation]="canAddFullPageScroll?scrollConfig.navigation:''" [attr.mnFullpageKeyboardScrolling]="canAddFullPageScroll?scrollConfig.keyboardScrolling:''" [attr.mnFullpageSlidesNavigation]="canAddFullPageScroll?true:''" [attr.mnFullpageControlArrows]="canAddFullPageScroll?scrollConfig.controlArrows:''" [attr.mnFullpageSlidesNavPosition]="canAddFullPageScroll?scrollConfig.slideNavPosition:''"
+     [attr.mnFullpageParallax]="canAddFullPageScroll?scrollConfig.parallax:''" [attr.mnFullpageParallaxOptions]="canAddFullPageScroll?scrollConfig.parallaxOptions:''"
+     [attr.mnFullpageFadingEffect]="canAddFullPageScroll?scrollConfig.fadingEffect:''">      
+  
+  <div class="section fp-section fp-table">
+      <div class="videoOverlay"></div>
+      <div class="section__one">
+        <div>
+          <video loop muted autoplay #heroVideo class="bgVideo">
+            <source src="../assets/videos/bg_video5.mp4" type="video/mp4">
+          </video>
+          <div class="overlay"></div>
+        </div>  
+        <div class="bgCard">
+          <div class="title" data-aos="fade-up" data-aos-duration="1000">
+            <p><i class="material-icons custom-icon">face</i>We help you to choose the best gift for all occasion</p>
+          </div>
+          <div class="banners"><!--@items-->
+              <div *ngFor="let image of homeImages" data-aos="zoom-in-up" data-aos-duration="1000" matRipple [matRippleCentered]="rippleConfig.centered" [matRippleDisabled]="rippleConfig.disabled" [matRippleUnbounded]="rippleConfig.unbounded"><img [src]=image/></div>
+          </div>
+        </div>
+        <div class="nav">
+          <i class="material-icons custom-icon" (click)="moveToTarget(ourvision)">
+            keyboard_arrow_down
+          </i>
+        </div>
+      </div>
+  </div>
+
+  <a #ourvision class="hyperlink"></a>
+  <div class="section fp-section fp-table">
+    <div class="section__info-wrapper">
+      <div class="section__info">
+        <div class="section__vision">
+          <div class="title" data-aos="fade-right" data-aos-duration="1500">
+            Our Purpose
+          </div>
+          <div class="banners">
+              <div data-aos="zoom-in-up" data-aos-duration="1500" *ngFor="let image of purposeImages" @items matRipple [matRippleCentered]="rippleConfig.centered" [matRippleDisabled]="rippleConfig.disabled" [matRippleUnbounded]="rippleConfig.unbounded"><img [src]=image/></div>
+          </div>
+        </div>
+        <div class="section__vision">
+          <div class="title" data-aos="fade-left" data-aos-duration="1500">
+            Return Gifts
+          </div>
+          <div class="banners">
+              <div data-aos="zoom-in-up" data-aos-duration="1500" *ngFor="let image of returnGiftImages" @items matRipple [matRippleCentered]="rippleConfig.centered" [matRippleDisabled]="rippleConfig.disabled" [matRippleUnbounded]="rippleConfig.unbounded"><img data-aos="zoom-in-up" data-aos-duration="1500" [src]=image/></div>
+          </div>
+        </div>        
+      </div>
+      <div class="section__info">
+        <div class="section__visionpart2">
+          <div class="title" data-aos="zoom-in-up" data-aos-duration="1500">
+            Our Vision
+          </div>
+          <div class="banners">
+              <div data-aos="zoom-in-up" data-aos-duration="1500" *ngFor="let image of visionImages" @items matRipple [matRippleCentered]="rippleConfig.centered" [matRippleDisabled]="rippleConfig.disabled" [matRippleUnbounded]="rippleConfig.unbounded"><img [src]=image/></div>
+          </div>
+        </div>
+      </div> 
+      <div class="nav">
+        <i class="material-icons custom-icon" (click)="moveToTarget(cat)">
+          keyboard_arrow_down
+        </i>
+      </div> 
+    </div>
+  </div>
+
+  <a #cat class="hyperlink"></a>
+  <div class="section fp-section fp-table marHeaderGap">
+    <div class="category_header">
+      <div class="category_title">Categories</div>
+      <div class="category_filter">
+        <app-filter [filterData]="categories_filter" (onFilter)="onFilterEvt($event)"></app-filter>
+      </div>
+    </div>
+    <app-category-list [categories]="category_data.current"></app-category-list>
+  </div>
+
+  <div class="section fp-section fp-table welcome marHeaderGap">
+    <div class="welcome__message">
+      <div data-aos="fade-up" data-aos-duration="1000">
+        <p>Choose exclusive gifts to your guests.<br/>Because they are special!<br/>Because our products are one of the kind!</p>
+      </div>
+      <div class="offer" data-aos="fade-up" data-aos-duration="1000">
+        <label>Inauguration sale!</label>
+        <p>Get 10% off on all prebookings before one month</p>
+      </div>
+    </div>
+    <form class="welcome__enquiry-wrapper" [formGroup]="userDetails" (ngSubmit)="onSubmit()" data-aos="fade-up" data-aos-duration="500">
+        <div class="welcome__enquiry-title">
+          Register here
+        </div>
+        <div class="welcome__enquiry-body">
+          <div class="multi-block">
+              <mat-form-field>
+                <input matInput placeholder="Enter your name" formControlName="name" required>
+                <mat-error *ngIf="userDetails.controls['name'].invalid">{{getErrorMessage('name')}}</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Enter mobile number" formControlName="mobilenumber" required>
+                <mat-error *ngIf="userDetails.controls['mobilenumber'].invalid">{{getErrorMessage('mobilenumber')}}</mat-error>
+              </mat-form-field>                
+          </div>    
+          <mat-form-field>
+            <input matInput placeholder="Enter your email" formControlName="email" required>
+            <mat-error *ngIf="userDetails.controls['email'].invalid">{{getErrorMessage('email')}}</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+              <input matInput placeholder="Enter your location" formControlName="location" required>
+              <mat-error *ngIf="userDetails.controls['location'].invalid">{{getErrorMessage('location')}}</mat-error>
+          </mat-form-field>
+         
+          <mat-form-field class="example-full-width" *ngIf="selectedOccation === 'Other'">
+              <textarea matInput placeholder="Please specify"></textarea>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+              <mat-label>Event Date</mat-label>
+              <input matInput [min]="date.min" [max]="date.max" [matDatepicker]="picker" placeholder="Choose a date" formControlName="date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <div class="multi-block">
+              <mat-form-field>
+                  <mat-label>Occasion Type</mat-label>
+                  <mat-select formControlName="occasionType">
+                    <mat-option *ngFor="let type of occastions" [value]="type.value">
+                      {{type.label}}
+                    </mat-option>
+                  </mat-select>
+              </mat-form-field>                
+              <mat-form-field>
+                  <mat-label>Budget per Gift</mat-label>
+                  <mat-select formControlName="budget">
+                    <mat-option *ngFor="let type of budgetList" [value]="type.value">
+                      {{type.label}}
+                    </mat-option>
+                  </mat-select>
+              </mat-form-field>                
+          </div>     
+          <mat-form-field>
+              <input matInput placeholder="Enter your quantity" formControlName="quantity" required>
+              <mat-error *ngIf="userDetails.controls['quantity'].invalid">{{getErrorMessage('quantity')}}</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+              <input matInput placeholder="Specifications" formControlName="specs" required>
+              <mat-error *ngIf="userDetails.controls['specs'].invalid">{{getErrorMessage('specs')}}</mat-error>
+          </mat-form-field>
+        </div>
+        <button matRipple [matRippleCentered]="rippleConfig.centered" [matRippleDisabled]="rippleConfig.disabled" [matRippleUnbounded]="rippleConfig.unbounded" [disabled]="!userDetails.valid" mat-raised-button>Register</button>
+    </form>
+  </div>
+
+  <app-scroll-top></app-scroll-top>
+  
+</div>

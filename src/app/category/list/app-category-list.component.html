@@ -1,0 +1,6 @@
+<div class="category">
+    <mat-card class="category__item" @items data-aos="zoom-in-up" data-aos-duration="750" *ngFor="let category of categories" matRipple [matRippleCentered]="rippleConfig.centered" [matRippleDisabled]="rippleConfig.disabled" [matRippleUnbounded]="rippleConfig.unbounded"
+              (click)="launchDetail(category)">
+        <img [src]="category.avatar"/>
+    </mat-card>
+<div>
